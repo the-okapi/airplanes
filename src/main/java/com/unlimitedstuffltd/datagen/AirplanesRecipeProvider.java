@@ -26,12 +26,12 @@ public class AirplanesRecipeProvider extends FabricRecipeProvider {
                         .pattern("ini")
                         .pattern("nrn")
                         .pattern("ini")
-                        .define('i', Items.IRON_BLOCK)
-                        .define('n', Items.NETHERITE_BLOCK)
-                        .define('r', Items.REDSTONE_BLOCK)
-                        .unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
-                        .unlockedBy(getHasName(Items.NETHERITE_BLOCK), has(Items.NETHERITE_BLOCK))
-                        .unlockedBy(getHasName(Items.REDSTONE_BLOCK), has(Items.REDSTONE_BLOCK))
+                        .define('i', Items.IRON_INGOT)
+                        .define('n', Items.NETHERITE_INGOT)
+                        .define('r', Items.REDSTONE)
+                        .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                        .unlockedBy(getHasName(Items.NETHERITE_INGOT), has(Items.NETHERITE_INGOT))
+                        .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
                         .save(output);
             }
         };

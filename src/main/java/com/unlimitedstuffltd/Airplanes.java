@@ -40,7 +40,7 @@ public class Airplanes implements ModInitializer {
 		return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
 	}
 
-	public static final JetEngineBlock JET_ENGINE = registerBlock("jet_engine", JetEngineBlock::new, BlockBehaviour.Properties.of().sound(SoundType.IRON).strength(5f, 6f).mapColor(MapColor.METAL));
+	public static final JetEngineBlock JET_ENGINE = registerBlock("jet_engine", JetEngineBlock::new, BlockBehaviour.Properties.of().sound(SoundType.IRON).requiresCorrectToolForDrops().strength(5f, 1200f).mapColor(MapColor.METAL));
 
 	@Override
 	public void onInitialize() {

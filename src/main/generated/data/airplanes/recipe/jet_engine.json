@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": "minecraft:iron_ingot",
+    "n": "minecraft:netherite_ingot",
+    "r": "minecraft:redstone"
+  },
+  "pattern": [
+    "ini",
+    "nrn",
+    "ini"
+  ],
+  "result": {
+    "id": "airplanes:jet_engine"
+  }
+}
