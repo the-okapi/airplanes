@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "airplanes:block/jet_engine_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "airplanes:block/jet_engine"
+    },
+    "axis=z": {
+      "model": "airplanes:block/jet_engine_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "airplanes:block/jet_engine_top",
+    "side": "airplanes:block/jet_engine"
+  }
+}
