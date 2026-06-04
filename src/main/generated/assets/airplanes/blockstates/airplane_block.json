@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "airplanes:block/airplane_block"
+    }
+  }
+}

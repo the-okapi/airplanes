@@ -1,6 +1,7 @@
 {
   "values": [
-    "airplanes:jet_engine"
+    "airplanes:jet_engine",
+    "airplanes:airplane_block"
   ],
   "replace": false
 }

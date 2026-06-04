@@ -14,7 +14,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,11 +41,14 @@ public class Airplanes implements ModInitializer {
 
 	public static final JetEngineBlock JET_ENGINE = registerBlock("jet_engine", JetEngineBlock::new, BlockBehaviour.Properties.of().sound(SoundType.IRON).requiresCorrectToolForDrops().strength(5f, 1200f).mapColor(MapColor.METAL));
 
+	public static final Block AIRPLANE_BLOCK = registerBlock("airplane_block", Block::new, BlockBehaviour.Properties.of().sound(SoundType.IRON).requiresCorrectToolForDrops().strength(5f, 6f));
+
 	@Override
 	public void onInitialize() {
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS)
 				.register(creativeModeTab -> {
 					creativeModeTab.accept(JET_ENGINE);
+					creativeModeTab.accept(AIRPLANE_BLOCK);
 				});
 	}
 }

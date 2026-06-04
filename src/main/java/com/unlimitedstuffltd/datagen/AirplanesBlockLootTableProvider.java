@@ -15,5 +15,6 @@ public class AirplanesBlockLootTableProvider extends FabricBlockLootSubProvider 
     @Override
     public void generate() {
         dropSelf(Airplanes.JET_ENGINE);
+        dropSelf(Airplanes.AIRPLANE_BLOCK);
     }
 }

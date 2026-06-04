@@ -33,6 +33,14 @@ public class AirplanesRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.NETHERITE_INGOT), has(Items.NETHERITE_INGOT))
                         .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
                         .save(output);
+
+                shaped(RecipeCategory.MISC, Airplanes.AIRPLANE_BLOCK, 9)
+                        .pattern("iii")
+                        .pattern("iii")
+                        .pattern("iii")
+                        .define('i', Items.IRON_BLOCK)
+                        .unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
+                        .save(output);
             }
         };
     }
