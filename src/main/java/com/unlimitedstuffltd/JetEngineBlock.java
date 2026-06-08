@@ -59,16 +59,17 @@ public class JetEngineBlock extends RotatedPillarBlock {
     }
 
     protected List<BlockPos> getAirplaneBlocks(Level level, BlockPos pos) {
-        ArrayList<BlockPos> airplaneBlocks = new ArrayList<>();
+        ArrayList<BlockPos> airplaneBlocks = new ArrayList<>(List.of(pos));
         ArrayList<BlockPos> uncheckedAirplaneBlocks = new ArrayList<>(List.of(pos));
 
         while (!uncheckedAirplaneBlocks.isEmpty()) {
             for (BlockPos blockPos : getNeighbouringBlockPos(uncheckedAirplaneBlocks.getFirst())) {
-                if (level.getBlockState(blockPos) == Airplanes.AIRPLANE_BLOCK.defaultBlockState()) {
+                if (level.getBlockState(blockPos) == Airplanes.AIRPLANE_BLOCK.defaultBlockState() && !airplaneBlocks.contains(blockPos) && !uncheckedAirplaneBlocks.contains(blockPos)) {
                     airplaneBlocks.add(blockPos);
                     uncheckedAirplaneBlocks.add(blockPos);
                 }
             }
+            Airplanes.LOGGER.info("Ran once");
             uncheckedAirplaneBlocks.removeFirst();
         }
 
@@ -85,9 +86,14 @@ public class JetEngineBlock extends RotatedPillarBlock {
             return;
         }
         List<BlockPos> airplaneBlocks = getAirplaneBlocks(level, pos);
+        ArrayList<BlockPos> doNotChange = new ArrayList<>();
         for (BlockPos airplaneBlock : airplaneBlocks) {
-            level.setBlock(airplaneBlock, Blocks.AIR.defaultBlockState(), 2);
+            Airplanes.LOGGER.info("Replace {}", airplaneBlock.toString());
+            if (!doNotChange.contains(airplaneBlock)) {
+                level.setBlock(airplaneBlock, Blocks.AIR.defaultBlockState(), 2);
+            }
             level.setBlock(airplaneBlock.offset(offset), Airplanes.JET_ENGINE.defaultBlockState(), 2);
+            doNotChange.add(airplaneBlock.offset(offset));
         }
     }
 }
